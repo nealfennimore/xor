@@ -7,6 +7,7 @@ src
 .gitignore
 .nvmrc
 .travis.yml
+.github
 *.log
 jest*
 yarn.lock

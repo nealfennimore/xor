@@ -1,5 +1,5 @@
 {
-  "name": "xor",
+  "name": "@nfen/xor",
   "version": "0.0.1",
   "description": "Simple XOR module",
   "main": "lib/index.js",
