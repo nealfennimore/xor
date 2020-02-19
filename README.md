@@ -1,4 +1,5 @@
 [![codecov](https://codecov.io/gh/nealfennimore/xor/branch/master/graph/badge.svg)](https://codecov.io/gh/nealfennimore/xor)
+[![npm version](https://badge.fury.io/js/%40nfen%2Fxor.svg)](https://badge.fury.io/js/%40nfen%2Fxor)
 
 # Simple XOR module
 
