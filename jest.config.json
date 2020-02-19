@@ -1,0 +1,20 @@
+{
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/coverage",
+    "coveragePathIgnorePatterns": [
+        "/node_modules",
+        "/dist/"
+    ],
+    "coverageReporters": [
+        "json",
+        "lcov",
+        "text-summary"
+    ],
+    "roots": [
+        "<rootDir>/src"
+    ],
+    "testRegex": ".*(test|spec)\\.jsx?$",
+    "testPathIgnorePatterns": [
+        "/node_modules/"
+    ]
+} 
