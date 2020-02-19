@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/nealfennimore/xor/branch/master/graph/badge.svg)](https://codecov.io/gh/nealfennimore/xor)
+
 # Simple XOR module
 
 Small module for running strings through a XOR cipher
