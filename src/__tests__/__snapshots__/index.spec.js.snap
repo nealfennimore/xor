@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`XOR Plugin Encrypt should encrypt properly 0 1`] = `""`;
+
+exports[`XOR Plugin Encrypt should encrypt properly 1 1`] = `"__퐻ﭒਹﰻ__"`;
+
+exports[`XOR Plugin Encrypt should encrypt properly 2 1`] = `"__"`;

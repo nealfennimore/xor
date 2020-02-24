@@ -1,49 +1,13 @@
 /**
- * Support for 16-bit
- */
-const BIT_LENGTH = 16;
-
-/**
- * Convert character string to binary
+ * Convert buffer to character string
  *
- * @param {String} str Character string
- * @returns Binary String
- */
-export function toBinary( str ) {
-    let binary = '';
-    for ( let i = 0, l = str.length; i < l; i++ ) {
-        binary += str.codePointAt( i ).toString( 2 ).padStart( BIT_LENGTH, '0' );
-    }
-    return binary;
-}
-
-/**
- * Convert binary string to character string
- *
- * @param {String} binary Binary String
+ * @param {ArrayBuffer} buffer Buffer of code points
  * @returns Character String
  */
-export function toChar( binary ) {
-    let str = '';
-    for ( let i = 0, l = binary.length / BIT_LENGTH; i < l; i++ ) {
-        const start = i * BIT_LENGTH;
-        const byte = binary.slice( start, start + BIT_LENGTH );
-        const codePoint = parseInt( byte, 2 );
-        str += String.fromCodePoint( codePoint );
-    }
-    return str;
-}
-
-/**
- * Perform exclusive OR operation
- *
- * @param {Number|String} a
- * @param {Number|String} b
- * @returns {Number} 0 or 1
- * @exports
- */
-export function xor( a, b ) {
-    return +( a !== b );
+export function toChar( arrBuffer ) {
+    const buffer = new Uint16Array( arrBuffer );
+    const codePoints = Array.from( buffer.values() );
+    return String.fromCodePoint( ...codePoints );
 }
 
 /**
@@ -51,24 +15,22 @@ export function xor( a, b ) {
  *
  * @param {String} key Key to XOR
  * @param {String} text Text to XOR
- * @returns {String} XOR'd string
+ * @returns {ArrayBuffer} Buffer of XOR'd code points
  * @exports
  */
 export function xorStrings( key, text ) {
-    const keyBin = toBinary( key );
-    const keyLength = keyBin.length;
-    const textBin = toBinary( text );
-    const textLength = textBin.length;
+    const keyLength = key.length;
+    const textLength = text.length;
 
-    let xorText = '';
+    const arrBuffer = new ArrayBuffer( textLength * 2 );
+    const buffer = new Uint16Array( arrBuffer );
 
     for ( let i = 0; i < textLength; i++ ) {
-        const ctElement = textBin[i];
-        const keyElement = keyBin[i % keyLength];
+        const keyCodePoint = key.codePointAt( i % keyLength );
+        const textCodePoint = text.codePointAt( i );
 
-        xorText += xor( ctElement, keyElement ).toString();
+        buffer[i] = keyCodePoint ^ textCodePoint;
     }
 
-    return xorText;
+    return arrBuffer;
 }
-
