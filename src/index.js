@@ -5,9 +5,7 @@
  * @returns Character String
  */
 export function toChar( arrBuffer ) {
-    const buffer = new Uint16Array( arrBuffer );
-    const codePoints = Array.from( buffer.values() );
-    return String.fromCodePoint( ...codePoints );
+    return String.fromCodePoint.apply( null, new Uint16Array( arrBuffer ) );
 }
 
 /**
