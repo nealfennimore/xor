@@ -10,13 +10,6 @@ function decrypt( key, cipherText ) {
 
 describe( 'XOR Plugin', ()=>{
 
-    // describe( 'toBinary', ()=>{
-    //     it( 'should convert a string to it\'s binary representation', ()=>{
-    //         expect( plugin.toBinary( 'a' ) ).toEqual( '0000000001100001' );
-    //         expect( plugin.toBinary( 'abc' ) ).toEqual( '000000000110000100000000011000100000000001100011' );
-    //     } );
-    // } );
-
     describe( 'toChar', ()=>{
         it( 'should convert a buffer to string', ()=>{
             const buffer = new ArrayBuffer( 2 );
