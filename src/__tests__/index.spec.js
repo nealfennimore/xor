@@ -12,15 +12,15 @@ describe( 'XOR Plugin', ()=>{
 
     describe( 'toBinary', ()=>{
         it( 'should convert a string to it\'s binary representation', ()=>{
-            expect( plugin.toBinary( 'a' ) ).toEqual( '01100001' );
-            expect( plugin.toBinary( 'abc' ) ).toEqual( '011000010110001001100011' );
+            expect( plugin.toBinary( 'a' ) ).toEqual( '0000000001100001' );
+            expect( plugin.toBinary( 'abc' ) ).toEqual( '000000000110000100000000011000100000000001100011' );
         } );
     } );
 
     describe( 'toChar', ()=>{
         it( 'should convert a binary string to it\'s character representation', ()=>{
-            expect( plugin.toChar( '01100001' ) ).toEqual( 'a' );
-            expect( plugin.toChar( '011000010110001001100011' ) ).toEqual( 'abc' );
+            expect( plugin.toChar( '0000000001100001' ) ).toEqual( 'a' );
+            expect( plugin.toChar( '000000000110000100000000011000100000000001100011' ) ).toEqual( 'abc' );
         } );
     } );
 
@@ -41,9 +41,9 @@ describe( 'XOR Plugin', ()=>{
 
     describe( 'xorStrings', ()=>{
         it( 'should XOR two strings', ()=>{
-            expect( plugin.xorStrings( 'a', 'b' ) ).toEqual( '00000011' );
-            expect( plugin.xorStrings( 'b', 'a' ) ).toEqual( '00000011' );
-            expect( plugin.xorStrings( 'abc', 'cba' ) ).toEqual( '000000100000000000000010' );
+            expect( plugin.xorStrings( 'a', 'b' ) ).toEqual( '0000000000000011' );
+            expect( plugin.xorStrings( 'b', 'a' ) ).toEqual( '0000000000000011' );
+            expect( plugin.xorStrings( 'abc', 'cba' ) ).toEqual( '000000000000001000000000000000000000000000000010' );
         } );
     } );
 

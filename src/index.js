@@ -1,4 +1,9 @@
 /**
+ * Support for 16-bit
+ */
+const BIT_LENGTH = 16;
+
+/**
  * Convert character string to binary
  *
  * @param {String} str Character string
@@ -7,7 +12,7 @@
 export function toBinary( str ) {
     let binary = '';
     for ( let i = 0, l = str.length; i < l; i++ ) {
-        binary += str.codePointAt( i ).toString( 2 ).padStart( 8, '0' );
+        binary += str.codePointAt( i ).toString( 2 ).padStart( BIT_LENGTH, '0' );
     }
     return binary;
 }
@@ -20,9 +25,9 @@ export function toBinary( str ) {
  */
 export function toChar( binary ) {
     let str = '';
-    for ( let i = 0, l = binary.length / 8; i < l; i++ ) {
-        const start = i * 8;
-        const byte = binary.slice( start, start + 8 );
+    for ( let i = 0, l = binary.length / BIT_LENGTH; i < l; i++ ) {
+        const start = i * BIT_LENGTH;
+        const byte = binary.slice( start, start + BIT_LENGTH );
         const codePoint = parseInt( byte, 2 );
         str += String.fromCodePoint( codePoint );
     }
