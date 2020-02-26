@@ -69,7 +69,7 @@ describe( 'XOR Plugin', ()=>{
             { args: ['key', 'abc'], result: 'abc' },
             { args: ['whatever', 'what is this sentence huh'], result: 'what is this sentence huh' },
             { args: ['abc', 'cba'], result: 'cba' },
-            // { args: ['a', '🐶'], result: '🐶' }, // TODO: Add astral plain support
+            // { args: ['a', '🐶'], result: '🐶' }, // TODO: Add astral plane support
         ];
 
         tests.forEach( ( test, i ) => {
